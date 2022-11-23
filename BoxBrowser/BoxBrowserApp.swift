@@ -1,0 +1,69 @@
+//
+//  BoxBrowserApp.swift
+//  BoxBrowser
+//
+//  Created by yangjian on 2022/11/23.
+//
+
+import SwiftUI
+
+@main
+struct BoxBrowserApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//    init() {
+//        FirebaseApp.configure()
+//    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+    
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+//        ApplicationDelegate.shared.application(
+//            application,
+//            didFinishLaunchingWithOptions: launchOptions
+//        )
+//        Settings.shared.isAdvertiserTrackingEnabled = true
+//        Settings.shared.isAdvertiserIDCollectionEnabled = true
+        return true
+    }
+    
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let sceneConfig = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+            sceneConfig.delegateClass = SceneDelegate.self // 👈🏻
+            return sceneConfig
+    }
+          
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+//        ApplicationDelegate.shared.application(
+//            app,
+//            open: url,
+//            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+//            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+//        )
+        return true
+    }
+}
+
+class SceneDelegate: NSObject, UIWindowSceneDelegate {
+    
+    var window: UIWindow?
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        AppUtil.window = self.window
+        UITabBar.appearance().isHidden = true
+    }
+}
