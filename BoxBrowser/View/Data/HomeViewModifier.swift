@@ -19,3 +19,26 @@ extension View {
         }
     }
 }
+
+extension View {
+    @MainActor
+    func alert(title: String, isPresent: Binding<Bool>) -> some View {
+        ZStack{
+            self
+            if isPresent.wrappedValue {
+                Color(hex: 0x333333, alpha: 0.6).ignoresSafeArea()
+                Text(title).padding(.all, 16)
+                    .background(Color.white.cornerRadius(8))
+                    .foregroundColor(.blue)
+                    .onAppear{
+                        Task{
+                            if !Task.isCancelled {
+                                try await Task.sleep(nanoseconds: 2_000_000_000)
+                                isPresent.wrappedValue.toggle()
+                            }
+                        }
+                    }
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@ struct HomeSearchCommand: AppCommand {
     func execute(in store: AppStore) {
         let text = store.state.home.text
         if text.count == 0 {
-            store.dispatch(.alert("Please enter your search content.  "))
+            store.dispatch(.alert("Please enter your search content. "))
             return
         }
         store.state.home.model.load(text)

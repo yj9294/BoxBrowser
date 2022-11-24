@@ -25,7 +25,7 @@ struct TermsView: View {
                     }
                     Spacer()
                 }
-                Text("Terms of User")
+                Text("Terms of Use")
                     .foregroundColor(.white)
             }
             .frame(height: 44)

@@ -83,7 +83,7 @@ extension AppState {
                 case .rate:
                     return "Rate Us"
                 case .terms:
-                    return "Terms of Users"
+                    return "Terms of Use"
                 case .privacy:
                     return "Privacy Policy"
                 default:

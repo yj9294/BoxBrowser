@@ -35,7 +35,6 @@ extension HomeViewModel {
     
     func load(_ url: String) {
         webView.navigationDelegate = self
-        webView.uiDelegate = self
         if url.isUrl, let Url = URL(string: url) {
             let request = URLRequest(url: Url)
             webView.load(request)
@@ -60,14 +59,6 @@ extension HomeViewModel {
 }
 
 extension HomeViewModel: WKNavigationDelegate, WKUIDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
-        return .allow
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse) async -> WKNavigationResponsePolicy {
-        return .allow
-    }
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         webView.load(navigationAction.request)
