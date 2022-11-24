@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//import Firebase
+import Firebase
 
 struct FirebasePropertyCommand: AppCommand {
     let property: AppState.Firebase.Property
@@ -27,7 +27,7 @@ struct FirebasePropertyCommand: AppCommand {
         }
 #if DEBUG
 #else
-//        Analytics.setUserProperty(value, forName: property.rawValue)
+        Analytics.setUserProperty(value, forName: property.rawValue)
 #endif
         NSLog("[ANA] [Property] \(property.rawValue) \(value ?? "")")
     }
@@ -65,7 +65,7 @@ struct FirebaseEvnetCommand: AppCommand {
         
         #if DEBUG
         #else
-//        Analytics.logEvent(event.rawValue, parameters: params)
+        Analytics.logEvent(event.rawValue, parameters: params)
         #endif
         
         NSLog("[ANA] [Event] \(event.rawValue) \(params ?? [:])")
