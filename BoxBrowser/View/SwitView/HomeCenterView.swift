@@ -63,9 +63,10 @@ struct HomeCenterView: View {
             // center
             if !home.isNavigation, !root.isTabShow {
                 WebView(webView: home.model.webView)
-            } else {
-                VStack(spacing: 60){
+            } else if !root.isCleanShow, !root.isPrivacyShow, !root.isTermsShow, !root.isTabShow {
+                VStack{
                     Image("home_icon")
+                    Spacer()
                     LazyVGrid(columns: columns, content: {
                         ForEach(AppState.HomeViewState.Item.allCases, id: \.self) { model in
                             Button {
@@ -79,8 +80,19 @@ struct HomeCenterView: View {
                             }
                         }
                     })
+                    Spacer()
+                    NativeView(model: home.adModel)
+                        .frame(height: 78)
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, 20)
+                .onDisappear {
+                    if !root.isTabShow {
+                        navigationDisappear()
+                    }
+                }
+                .onAppear {
+                    navigationApear()
+                }
             }
             Spacer()
             // bottom
@@ -159,16 +171,28 @@ extension HomeCenterView {
     
     func cleanAction() {
         store.dispatch(.cleanAlertShow(true))
+        store.dispatch(.adLoad(.interstitial))
     }
     
     func tabAction() {
         store.dispatch(.hideKeyboard)
         store.dispatch(.tabShow(true))
         store.dispatch(.logE(.tabShow))
+        
+        store.dispatch(.adDisappear(.native))
     }
     
     func settingAction() {
         store.dispatch(.settingShow(true))
+    }
+    
+    func navigationDisappear() {
+        store.dispatch(.adDisappear(.native))
+    }
+    
+    func navigationApear() {
+        store.dispatch(.adLoad(.interstitial))
+        store.dispatch(.adLoad(.native, .home))
     }
 }
 

@@ -25,7 +25,7 @@ struct HomeView: View {
             ZStack{
                 
                 HomeCenterView()
-                    .frame(width: proxy.size.width)
+                    .frame(width: proxy.size.width, height: proxy.size.height)
 
                 if root.isTabShow {
                     MyTabView()

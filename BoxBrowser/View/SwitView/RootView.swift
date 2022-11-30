@@ -19,9 +19,19 @@ struct RootView: View {
                 .tag(AppState.RootViewState.Index.home)
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            AppEnterbackground = false
+            store.dispatch(.dismiss)
             store.dispatch(.launching)
             store.dispatch(.logE(.openHot))
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification), perform: { _ in
+            AppEnterbackground = true
+        })
+        .onReceive(NotificationCenter.default.publisher(for: .nativeAdLoadCompletion), perform: { ad in
+            if let ad = ad.object as? NativeViewModel {
+                store.dispatch(.homeAdModel(ad))
+            }
+        })
     }
 }
 

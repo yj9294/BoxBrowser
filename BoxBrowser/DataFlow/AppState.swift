@@ -12,6 +12,7 @@ struct AppState {
     var launch = LaunchViewState()
     var home = HomeViewState()
     var setting = SettingViewState()
+    var ad = GoogleAdMoble()
 }
 
 extension AppState {
@@ -66,6 +67,7 @@ extension AppState {
         var isNavigation: Bool = true
         
         var models: [HomeViewModel] = [.navigation]
+        var adModel: NativeViewModel = .None
         var model: HomeViewModel {
             models.filter {
                 $0.isSelect
@@ -178,6 +180,56 @@ extension AppState {
             
             case loading = "k_5"
             case loaded = "ll_5"
+        }
+    }
+}
+
+
+extension AppState {
+    struct GoogleAdMoble{
+
+        @UserDefault(key: "state.ad.config")
+        var config: GADConfigModel?
+       
+        @UserDefault(key: "state.ad.limit")
+        var limit: GADLimitModel?
+        
+        var impressionDate:[GADPosition.Position: Date] = [:]
+        
+        let ads:[GADLoadModel] = GADPosition.allCases.map { p in
+            GADLoadModel(position: p)
+        }.filter { m in
+            m.position != .all
+        }
+        
+        func isLoaded(_ position: GADPosition) -> Bool {
+            return self.ads.filter {
+                $0.position == position
+            }.first?.isLoaded == true
+        }
+
+        func isLimited(in store: AppStore) -> Bool {
+            if limit?.date.isToday == true {
+                if (store.state.ad.limit?.showTimes ?? 0) >= (store.state.ad.config?.showTimes ?? 0) || (store.state.ad.limit?.clickTimes ?? 0) >= (store.state.ad.config?.clickTimes ?? 0) {
+                    return true
+                }
+            }
+            return false
+        }
+    }
+}
+
+extension Date {
+    var isExpired: Bool {
+        Date().timeIntervalSince1970 - self.timeIntervalSince1970 > 3000
+    }
+    
+    var isToday: Bool {
+        let diff = Calendar.current.dateComponents([.day], from: self, to: Date())
+        if diff.day == 0 {
+            return true
+        } else {
+            return false
         }
     }
 }

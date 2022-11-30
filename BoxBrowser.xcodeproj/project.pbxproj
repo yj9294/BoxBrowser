@@ -12,6 +12,14 @@
 		C7139BF6292F5D5400EAB287 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C7139BF5292F5D5400EAB287 /* FirebaseCrashlytics */; };
 		C7139BF8292F5D5400EAB287 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C7139BF7292F5D5400EAB287 /* FirebaseRemoteConfig */; };
 		C7139BFA292F5E8000EAB287 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7139BF9292F5E7F00EAB287 /* GoogleService-Info.plist */; };
+		C7139C0129304F3C00EAB287 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7139C0029304F3C00EAB287 /* GoogleMobileAds */; };
+		C7139C0329304F8600EAB287 /* GADCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C0229304F8600EAB287 /* GADCommand.swift */; };
+		C7139C052930523C00EAB287 /* NativeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C042930523C00EAB287 /* NativeViewModel.swift */; };
+		C7139C07293054C200EAB287 /* GADConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C06293054C200EAB287 /* GADConfigModel.swift */; };
+		C7139C092930570A00EAB287 /* GADLoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C082930570A00EAB287 /* GADLoadModel.swift */; };
+		C7139C0B2930577C00EAB287 /* GADModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C0A2930577C00EAB287 /* GADModel.swift */; };
+		C7139C0D293060F200EAB287 /* NativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7139C0C293060F200EAB287 /* NativeView.swift */; };
+		C7139C0F29306C1F00EAB287 /* admob.json in Resources */ = {isa = PBXBuildFile; fileRef = C7139C0E29306C1E00EAB287 /* admob.json */; };
 		C73022B4292DF61900D47D78 /* BoxBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73022B3292DF61900D47D78 /* BoxBrowserApp.swift */; };
 		C73022B6292DF61900D47D78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73022B5292DF61900D47D78 /* ContentView.swift */; };
 		C73022B8292DF61B00D47D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C73022B7292DF61B00D47D78 /* Assets.xcassets */; };
@@ -44,10 +52,18 @@
 		C730230B292E36FC00D47D78 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730230A292E36FC00D47D78 /* LottieView.swift */; };
 		C730230D292E3A6B00D47D78 /* FirebaseCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C730230C292E3A6B00D47D78 /* FirebaseCommand.swift */; };
 		C7302310292E44ED00D47D78 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C730230F292E44ED00D47D78 /* Launch Screen.storyboard */; };
+		C7328BF82930CF2D00202727 /* CleanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7328BF72930CF2D00202727 /* CleanCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C7139BF9292F5E7F00EAB287 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7139C0229304F8600EAB287 /* GADCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADCommand.swift; sourceTree = "<group>"; };
+		C7139C042930523C00EAB287 /* NativeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewModel.swift; sourceTree = "<group>"; };
+		C7139C06293054C200EAB287 /* GADConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADConfigModel.swift; sourceTree = "<group>"; };
+		C7139C082930570A00EAB287 /* GADLoadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADLoadModel.swift; sourceTree = "<group>"; };
+		C7139C0A2930577C00EAB287 /* GADModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADModel.swift; sourceTree = "<group>"; };
+		C7139C0C293060F200EAB287 /* NativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeView.swift; sourceTree = "<group>"; };
+		C7139C0E29306C1E00EAB287 /* admob.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = admob.json; sourceTree = "<group>"; };
 		C73022B0292DF61900D47D78 /* BoxBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73022B3292DF61900D47D78 /* BoxBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxBrowserApp.swift; sourceTree = "<group>"; };
 		C73022B5292DF61900D47D78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +97,7 @@
 		C730230C292E3A6B00D47D78 /* FirebaseCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCommand.swift; sourceTree = "<group>"; };
 		C730230E292E420D00D47D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C730230F292E44ED00D47D78 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C7328BF72930CF2D00202727 /* CleanCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7139C0129304F3C00EAB287 /* GoogleMobileAds in Frameworks */,
 				C7302309292E36E100D47D78 /* Lottie in Frameworks */,
 				C7139BF6292F5D5400EAB287 /* FirebaseCrashlytics in Frameworks */,
 				C7139BF1292F5B4300EAB287 /* FacebookCore in Frameworks */,
@@ -127,6 +145,7 @@
 				C73022B5292DF61900D47D78 /* ContentView.swift */,
 				C73022EE292DFA9300D47D78 /* clean.json */,
 				C73022B7292DF61B00D47D78 /* Assets.xcassets */,
+				C7139C0E29306C1E00EAB287 /* admob.json */,
 				C730230F292E44ED00D47D78 /* Launch Screen.storyboard */,
 				C73022B9292DF61B00D47D78 /* Preview Content */,
 			);
@@ -169,8 +188,10 @@
 				C73022E8292DF9A000D47D78 /* AppCommand.swift */,
 				C73022EC292DFA0600D47D78 /* LaunchCommand.swift */,
 				C73022FB292E0D8300D47D78 /* HomeCommand.swift */,
+				C7328BF72930CF2D00202727 /* CleanCommand.swift */,
 				C73022FF292E255400D47D78 /* SettingCommand.swift */,
 				C730230C292E3A6B00D47D78 /* FirebaseCommand.swift */,
+				C7139C0229304F8600EAB287 /* GADCommand.swift */,
 			);
 			path = DataFlow;
 			sourceTree = "<group>";
@@ -181,6 +202,7 @@
 				C73022F7292E078200D47D78 /* WebView.swift */,
 				C73022FD292E236900D47D78 /* ShareView.swift */,
 				C730230A292E36FC00D47D78 /* LottieView.swift */,
+				C7139C0C293060F200EAB287 /* NativeView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -207,6 +229,10 @@
 			children = (
 				C73022F5292E053100D47D78 /* HomeViewModel.swift */,
 				C73022F9292E0BAE00D47D78 /* HomeViewModifier.swift */,
+				C7139C042930523C00EAB287 /* NativeViewModel.swift */,
+				C7139C06293054C200EAB287 /* GADConfigModel.swift */,
+				C7139C082930570A00EAB287 /* GADLoadModel.swift */,
+				C7139C0A2930577C00EAB287 /* GADModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -234,6 +260,7 @@
 				C7139BF3292F5D5400EAB287 /* FirebaseAnalytics */,
 				C7139BF5292F5D5400EAB287 /* FirebaseCrashlytics */,
 				C7139BF7292F5D5400EAB287 /* FirebaseRemoteConfig */,
+				C7139C0029304F3C00EAB287 /* GoogleMobileAds */,
 			);
 			productName = BoxBrowser;
 			productReference = C73022B0292DF61900D47D78 /* BoxBrowser.app */;
@@ -267,6 +294,7 @@
 				C7302307292E36E100D47D78 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				C7139BEF292F5B4300EAB287 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				C7139BF2292F5D5300EAB287 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C7139BFF29304F3B00EAB287 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
 			);
 			productRefGroup = C73022B1292DF61900D47D78 /* Products */;
 			projectDirPath = "";
@@ -285,6 +313,7 @@
 				C73022BB292DF61B00D47D78 /* Preview Assets.xcassets in Resources */,
 				C73022EF292DFA9300D47D78 /* clean.json in Resources */,
 				C7139BFA292F5E8000EAB287 /* GoogleService-Info.plist in Resources */,
+				C7139C0F29306C1F00EAB287 /* admob.json in Resources */,
 				C7302310292E44ED00D47D78 /* Launch Screen.storyboard in Resources */,
 				C73022B8292DF61B00D47D78 /* Assets.xcassets in Resources */,
 			);
@@ -323,7 +352,9 @@
 				C73022ED292DFA0600D47D78 /* LaunchCommand.swift in Sources */,
 				C73022B6292DF61900D47D78 /* ContentView.swift in Sources */,
 				C73022FE292E236900D47D78 /* ShareView.swift in Sources */,
+				C7139C092930570A00EAB287 /* GADLoadModel.swift in Sources */,
 				C73022E3292DF84700D47D78 /* AppStore.swift in Sources */,
+				C7139C0B2930577C00EAB287 /* GADModel.swift in Sources */,
 				C73022F1292DFBC500D47D78 /* AppUtil.swift in Sources */,
 				C73022B4292DF61900D47D78 /* BoxBrowserApp.swift in Sources */,
 				C730230D292E3A6B00D47D78 /* FirebaseCommand.swift in Sources */,
@@ -333,7 +364,9 @@
 				C73022FA292E0BAE00D47D78 /* HomeViewModifier.swift in Sources */,
 				C73022F3292DFC5900D47D78 /* Helper.swift in Sources */,
 				C7302302292E28E900D47D78 /* PrivacyView.swift in Sources */,
+				C7139C0329304F8600EAB287 /* GADCommand.swift in Sources */,
 				C73022E5292DF86900D47D78 /* AppAction.swift in Sources */,
+				C7139C052930523C00EAB287 /* NativeViewModel.swift in Sources */,
 				C73022DB292DF76300D47D78 /* MyTabView.swift in Sources */,
 				C73022E0292DF76300D47D78 /* SettingView.swift in Sources */,
 				C73022DC292DF76300D47D78 /* HomeCenterView.swift in Sources */,
@@ -343,9 +376,12 @@
 				C73022E9292DF9A000D47D78 /* AppCommand.swift in Sources */,
 				C730230B292E36FC00D47D78 /* LottieView.swift in Sources */,
 				C73022FC292E0D8300D47D78 /* HomeCommand.swift in Sources */,
+				C7139C07293054C200EAB287 /* GADConfigModel.swift in Sources */,
 				C73022F8292E078200D47D78 /* WebView.swift in Sources */,
 				C73022DE292DF76300D47D78 /* RootView.swift in Sources */,
+				C7328BF82930CF2D00202727 /* CleanCommand.swift in Sources */,
 				C73022DD292DF76300D47D78 /* HomeView.swift in Sources */,
+				C7139C0D293060F200EAB287 /* NativeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -491,7 +528,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.browser.box.icen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -509,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BoxBrowser/Preview Content\"";
@@ -528,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.browser.box.icen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -581,6 +619,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		C7139BFF29304F3B00EAB287 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanghits/GoogleMobileAds";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		C7302307292E36E100D47D78 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -611,6 +657,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C7139BF2292F5D5300EAB287 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		C7139C0029304F3C00EAB287 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7139BFF29304F3B00EAB287 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
+			productName = GoogleMobileAds;
 		};
 		C7302308292E36E100D47D78 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

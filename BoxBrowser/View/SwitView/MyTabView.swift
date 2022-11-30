@@ -74,32 +74,40 @@ struct MyTabView: View {
             }
             Spacer()
             
+            VStack {
+                NativeView(model: home.adModel)
+                    .frame(height: 78)
+            }
+            .padding(.horizontal, 12)
+            .onAppear {
+                adApear()
+            }
+            
             // 底部
-            HStack{
-                ZStack{
-                    HStack{
-                        Spacer()
-                        Button(action: addAction) {
-                            Image("tab_new")
-                        }
-                        Spacer()
+            ZStack{
+                HStack{
+                    Spacer()
+                    Button(action: addAction) {
+                        Image("tab_new")
                     }
-                    .padding(.vertical, 8)
-                    
-                    HStack{
-                        Spacer()
-                        Button(action: backAction) {
-                            Text("Back").foregroundColor(Color(hex: 0x9D9BCA))
-                                .font(.body)
-                        }
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 8)
-                    }
+                    Spacer()
                 }
+                .padding(.vertical, 8)
+                .frame(height: 58)
+
+                HStack{
+                    Spacer()
+                    Button(action: backAction) {
+                        Text("Back").foregroundColor(Color(hex: 0x9D9BCA))
+                            .font(.body)
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 8)
+                }
+                .frame(height: 58)
             }
             .background(Image("home_bottom_bg").resizable().ignoresSafeArea())
         }
-        .padding([.top,.leading,.trailing], 8)
         .background(
             Image("launch_bg")
                 .resizable()
@@ -129,7 +137,13 @@ extension MyTabView{
     }
     
     func backAction() {
+        store.dispatch(.adDisappear(.native))
         store.dispatch(.tabShow(false))
+    }
+    
+    func adApear() {
+        store.dispatch(.adLoad(.native, .tab))
+        store.dispatch(.adLoad(.interstitial))
     }
 }
 

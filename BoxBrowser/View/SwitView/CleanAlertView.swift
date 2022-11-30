@@ -51,9 +51,17 @@ struct CleanAlertView: View {
 }
 
 extension CleanAlertView {
+    
+    @MainActor
     func action() {
         store.dispatch(.cleanAlertShow(false))
         store.dispatch(.cleanShow(true))
+        Task{
+            if !Task.isCancelled {
+                try await Task.sleep(nanoseconds: 2_000_000_000)
+                store.dispatch(.clean)
+            }
+        }
     }
     
     func dismissAction() {

@@ -72,3 +72,17 @@ struct HideKeyboardCommand: AppCommand {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
+
+struct DismissCommand: AppCommand {
+    func execute(in store: AppStore) {
+        if let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first, let vc = window.rootViewController, let presentedVC = vc.presentedViewController {
+            if let p = presentedVC.presentedViewController {
+                p.dismiss(animated: true) {
+//                    presentedVC.dismiss(animated: true)
+                }
+            } else {
+                presentedVC.dismiss(animated: true)
+            }
+        }
+    }
+}

@@ -12,9 +12,11 @@ enum AppAction {
     case webview
     case hideKeyboard
     case alert(String)
+    case dismiss
     
     case launching
     case launchProgress(Double)
+    case launchDuration(Double)
     case launched
     
     case homeText(String)
@@ -45,4 +47,23 @@ enum AppAction {
     
     case logP(AppState.Firebase.Property, String? = nil)
     case logE(AppState.Firebase.Event, [String: String]? = nil)
+    
+    case adRequestConfig
+    case adUpdateConfig(GADConfigModel)
+    case adUpdateLimit(GADLimitModel.Status)
+    
+    case adAppear(GADPosition)
+    case adDisappear(GADPosition)
+    
+    case adClean(GADPosition)
+    
+    case adLoad(GADPosition, GADPosition.Position = .home)
+    case adShow(GADPosition, GADPosition.Position = .home, ((NativeViewModel)->Void)? = nil)
+    
+    case adNativeImpressionDate(GADPosition.Position = .home)
+    
+    case homeAdModel(NativeViewModel)
+    
+    case clean
+
 }

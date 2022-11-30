@@ -17,6 +17,7 @@ class AppStore: ObservableObject {
     }
     
     private func commonInit() {
+        dispatch(.adRequestConfig)
         dispatch(.launching)
         dispatch(.webview)
         
@@ -49,7 +50,8 @@ extension AppStore{
         case .alert(let message):
             appState.root.message = message
             appState.root.isAlert = true
-            
+        case .dismiss:
+            appCommand = DismissCommand()
             
         case .launching:
             appState.launch.progress = 0
@@ -57,6 +59,11 @@ extension AppStore{
             appCommand = LaunchCommand()
         case .launchProgress(let double):
             appState.launch.progress = double
+            if double >= 1.0 {
+                appState.launch.progress = 1.0
+            }
+        case .launchDuration(let duration):
+            appState.launch.duration = duration
         case .launched:
             appState.root.selection = .home
             
@@ -127,6 +134,32 @@ extension AppStore{
             appCommand = FirebasePropertyCommand(property, value)
         case .logE(let event, let params):
             appCommand = FirebaseEvnetCommand(event, params)
+            
+        case .adRequestConfig:
+            appCommand = GADRequestConfigCommand()
+        case .adUpdateConfig(let config):
+            appState.ad.config = config
+        case .adUpdateLimit(let state):
+            appCommand = GADLimitedCommand(state)
+        case .adAppear(let position):
+            appCommand = GADAppearCommand(position)
+        case .adDisappear(let position):
+            appCommand = GADDisappearCommand(position)
+        case .adClean(let position):
+            appCommand = GADCleanCommand(position)
+        
+        case .adLoad(let position, let p):
+            appCommand = GADLoadCommand(position, p)
+        case .adShow(let position, let p, let completion):
+            appCommand = GADShowCommand(position, p, completion)
+            
+        case .adNativeImpressionDate(let p):
+            appState.ad.impressionDate[p] = Date()
+        case .homeAdModel(let model):
+            appState.home.adModel = model
+            
+        case .clean:
+            appCommand = CleanCommand()
         }
 
         

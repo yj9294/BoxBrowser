@@ -28,25 +28,20 @@ struct CleanView: View {
         .background(
             Image("launch_bg").resizable().ignoresSafeArea()
         )
-        .onAppear{
-            Task{
-                if !Task.isCancelled {
-                    try await Task.sleep(nanoseconds: 2_000_000_000)
-                    dismissAction()
-                }
-            }
-        }
+//        .onAppear{
+//            Task{
+//                if !Task.isCancelled {
+//                    try await Task.sleep(nanoseconds: 2_000_000_000)
+//                    dismissAction()
+//                }
+//            }
+//        }
     }
 }
 
 extension CleanView {
     func dismissAction() {
-        store.dispatch(.logE(.cleanAnimation))
-        store.dispatch(.cleanShow(false))
-        store.dispatch(.tabClean)
-        store.dispatch(.webview)
-        store.dispatch(.logE(.cleanAlert))
-        store.dispatch(.alert("Clean Successfully."))
+        store.dispatch(.clean)
     }
 }
 
